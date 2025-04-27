@@ -22,7 +22,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="/"><span class="fw-bolder text-primary">Ingenieria Mécanica - Secretaria Técnica</span></a>
+                    <a class="navbar-brand" href="/"><span class="fw-bolder text-primary">Ingenieria Mecánica - Secretaria Técnica</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -50,7 +50,12 @@
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
-                                <form id="loginForm" action="/login" method="POST">
+                                <% if (typeof errorMsg !== 'undefined' && errorMsg) { %>
+                                    <div class="alert alert-danger mb-4" role="alert">
+                                        <%= errorMsg %>
+                                    </div>
+                                <% } %>
+                                <form id="loginForm" action="/visitanteLogin" method="POST">
                                     <!-- Username input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="username" name="username" type="text" placeholder="Username" required />
@@ -59,7 +64,7 @@
                                     <!-- Password input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="password" name="password" type="password" placeholder="Password" required />
-                                        <label for="password">contraseña</label>
+                                        <label for="password">Contraseña</label>
                                     </div>
                                     <!-- Submit Button-->
                                     <div class="d-grid">
