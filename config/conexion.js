@@ -1,10 +1,11 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'Dracohunter#190603',
-  database: process.env.DB_NAME || 'profesores',
+  //host: process.env.DB_HOST || 'localhost',
+  //user: process.env.DB_USER || 'root',
+  //password: process.env.DB_PASSWORD || 'Dracohunter#190603',
+  //database: process.env.DB_NAME || 'profesores',
+  connectionString: ProcessingInstruction.env.DATABASE_URL,
   max: 10, 
   idleTimeoutMillis: 30000 
 });
